@@ -6,7 +6,6 @@ use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\CategoriesController;
 use App\Http\Controllers\backend\ProductController;
-use App\Models\Categories;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +18,6 @@ use App\Models\Categories;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 // Home
 Route::get('/',                 [HomeController::class, 'Home']);
@@ -45,7 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin',             [AdminController::class, 'index']);
     Route::get('/admin/add-post',    [AdminController::class, 'AddPost']);
     Route::get('/admin/list-post',   [AdminController::class, 'ListPost']);
-    
+
     // User Logout
     Route::get('/signout',           [UserController::class, 'SignOut']);
 
